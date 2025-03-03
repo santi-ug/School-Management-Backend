@@ -1,10 +1,11 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { NotasEvaluacionService } from './notas_evaluacion.service';
-
 
 @Controller('notas_evaluacion')
 export class NotasEvaluacionController {
-  constructor(private readonly notasEvaluacionService: NotasEvaluacionService) {}
+  constructor(
+    private readonly notasEvaluacionService: NotasEvaluacionService,
+  ) {}
 
   @Get()
   findAll() {

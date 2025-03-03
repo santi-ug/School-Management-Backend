@@ -1,9 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { NotasEvaluacion } from '../../entities/notas_evaluacion';
-
-
 
 @Injectable()
 export class NotasEvaluacionService {
@@ -21,7 +19,7 @@ export class NotasEvaluacionService {
   }
 
   async findOne(id: string) {
-    return this.notasEvaluacionRepository.findOne({ where: { id_nota : id } });
+    return this.notasEvaluacionRepository.findOne({ where: { id_nota: id } });
   }
 
   async update(id: string, nota: Partial<NotasEvaluacion>) {

@@ -1,5 +1,11 @@
 // src/entities/evaluacion.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Curso } from './curso.entity';
 import { NotasEvaluacion } from './notas_evaluacion';
 

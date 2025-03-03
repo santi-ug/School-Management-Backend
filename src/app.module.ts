@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DepartamentoModule } from './modules/departamento/departamento.module';
-import { ProfesorModule } from './modules/profesor/profesor.module';
 import { CursoModule } from './modules/curso/curso.module';
+import { DepartamentoModule } from './modules/departamento/departamento.module';
 import { EstudianteModule } from './modules/estudiante/estudiante.module';
-import { MatriculaModule } from './modules/matricula/matricula.module';
 import { EvaluacionModule } from './modules/evaluacion/evaluacion.module';
+import { MatriculaModule } from './modules/matricula/matricula.module';
 import { NotasEvaluacionModule } from './modules/notas_evaluacion/notas_evaluacion.module';
+import { ProfesorModule } from './modules/profesor/profesor.module';
 
 @Module({
   imports: [

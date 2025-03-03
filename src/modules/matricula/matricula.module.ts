@@ -6,6 +6,6 @@ import { Matricula } from '../../entities/matricula.entity';
   imports: [TypeOrmModule.forFeature([Matricula])],
   controllers: [],
   providers: [],
-  exports: [TypeOrmModule]
+  exports: [TypeOrmModule],
 })
 export class MatriculaModule {}

@@ -6,6 +6,6 @@ import { Profesor } from '../../entities/profesor.entity';
   imports: [TypeOrmModule.forFeature([Profesor])],
   controllers: [],
   providers: [],
-  exports: [TypeOrmModule]
+  exports: [TypeOrmModule],
 })
 export class ProfesorModule {}

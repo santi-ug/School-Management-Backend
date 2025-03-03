@@ -1,5 +1,5 @@
 // src/entities/notas_evaluacion.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Estudiante } from './estudiante.entity';
 import { Evaluacion } from './evaluacion.entity';
 

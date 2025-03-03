@@ -1,8 +1,14 @@
 // src/entities/curso.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
-import { Profesor } from './profesor.entity';
-import { Matricula } from './matricula.entity';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Evaluacion } from './evaluacion.entity';
+import { Matricula } from './matricula.entity';
+import { Profesor } from './profesor.entity';
 
 @Entity()
 export class Curso {

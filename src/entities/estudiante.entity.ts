@@ -1,5 +1,5 @@
 // src/entities/estudiante.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Matricula } from './matricula.entity';
 import { NotasEvaluacion } from './notas_evaluacion';
 

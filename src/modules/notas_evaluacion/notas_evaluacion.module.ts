@@ -6,6 +6,6 @@ import { NotasEvaluacion } from '../../entities/notas_evaluacion';
   imports: [TypeOrmModule.forFeature([NotasEvaluacion])],
   controllers: [],
   providers: [],
-  exports: [TypeOrmModule]
+  exports: [TypeOrmModule],
 })
 export class NotasEvaluacionModule {}

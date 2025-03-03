@@ -6,6 +6,6 @@ import { Evaluacion } from '../../entities/evaluacion.entity';
   imports: [TypeOrmModule.forFeature([Evaluacion])],
   controllers: [],
   providers: [],
-  exports: [TypeOrmModule]
+  exports: [TypeOrmModule],
 })
 export class EvaluacionModule {}

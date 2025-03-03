@@ -1,7 +1,7 @@
 // src/entities/matricula.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { Estudiante } from './estudiante.entity';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Curso } from './curso.entity';
+import { Estudiante } from './estudiante.entity';
 
 @Entity()
 export class Matricula {

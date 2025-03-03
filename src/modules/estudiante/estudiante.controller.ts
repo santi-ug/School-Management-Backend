@@ -1,6 +1,5 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { EstudianteService } from './estudiante.service';
-
 
 @Controller('estudiantes')
 export class EstudianteController {
@@ -15,6 +14,4 @@ export class EstudianteController {
   create(@Body() data: any) {
     return this.estudianteService.create(data);
   }
-
-  
 }

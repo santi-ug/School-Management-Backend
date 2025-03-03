@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Matricula } from '../../entities/matricula.entity';
 import { Repository } from 'typeorm';
-
+import { Matricula } from '../../entities/matricula.entity';
 
 @Injectable()
 export class MatriculaService {
@@ -20,7 +19,7 @@ export class MatriculaService {
   }
 
   async findOne(id: string) {
-    return this.matriculaRepository.findOne({ where: { id_matricula:id } });
+    return this.matriculaRepository.findOne({ where: { id_matricula: id } });
   }
 
   async update(id: string, matricula: Partial<Matricula>) {
@@ -31,4 +30,3 @@ export class MatriculaService {
     return this.matriculaRepository.delete(id);
   }
 }
-
