@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: school-management
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules  # Exclude node_modules to prevent overriding dependencies
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=7975
+      - POSTGRES_DB=academic_management
+    networks:
+      - network-school-management
+    command: npm run start:dev  # Ensures NestJS runs properly
+
+  postgres:
+    container_name: postgres-school-management
+    image: postgres:latest
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=7975
+      - POSTGRES_DB=academic_management
+    volumes:
+      - data_postgres:/var/lib/postgresql/data
+    networks:
+      - network-school-management
+
+volumes:
+  data_postgres:
+
+networks:
+  network-school-management:
