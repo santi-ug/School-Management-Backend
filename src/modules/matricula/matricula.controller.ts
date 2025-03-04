@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Put, Delete } from '@nestjs/common';
 import { MatriculaService } from './matricula.service';
 
 @Controller('matriculas')
@@ -13,5 +13,20 @@ export class MatriculaController {
   @Post()
   create(@Body() data: any) {
     return this.matriculaService.create(data);
+  }
+
+  @Get(':id')
+  findOne(@Body('id') id: string) {
+    return this.matriculaService.findOne(id);
+  }
+
+  @Put(':id')
+  update(@Body('id') id: string, @Body() data: any) {
+    return this.matriculaService.update(id, data);
+  }
+
+  @Delete(':id')
+  remove(@Body('id') id: string) {
+    return this.matriculaService.remove(id);
   }
 }

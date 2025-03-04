@@ -8,6 +8,8 @@ import { EvaluacionModule } from './modules/evaluacion/evaluacion.module';
 import { MatriculaModule } from './modules/matricula/matricula.module';
 import { NotasEvaluacionModule } from './modules/notas_evaluacion/notas_evaluacion.module';
 import { ProfesorModule } from './modules/profesor/profesor.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { AuthController } from './modules/auth/auth.controller';
 
 @Module({
   imports: [
@@ -23,7 +25,7 @@ import { ProfesorModule } from './modules/profesor/profesor.module';
         host: configService.get<string>('DB_HOST', 'localhost'),
         port: configService.get<number>('DB_PORT', 5432),
         username: configService.get<string>('DB_USERNAME', 'postgres'),
-        password: configService.get<string>('DB_PASSWORD', ''), // ✅ Uses DB_PASSWORD from .env
+        password: configService.get<string>('DB_PASSWORD', ''), 
         database: configService.get<string>('DB_NAME', 'academic_management'),
         autoLoadEntities: true,
         synchronize: true,
@@ -37,6 +39,8 @@ import { ProfesorModule } from './modules/profesor/profesor.module';
     MatriculaModule,
     EvaluacionModule,
     NotasEvaluacionModule,
+    AuthModule,
   ],
+  controllers: [AuthController],
 })
 export class AppModule {}
