@@ -11,12 +11,14 @@ services:
       - /app/node_modules  # Exclude node_modules to prevent overriding dependencies
     depends_on:
       - postgres
+    env_file: 
+      - .env  # Load environment variables from .env file
     environment:
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5432
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=7975
-      - POSTGRES_DB=academic_management
+      - POSTGRES_HOST=${DB_HOST}
+      - POSTGRES_PORT=${DB_PORT}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     networks:
       - network-school-management
     command: npm run start:dev  # Ensures NestJS runs properly
@@ -27,10 +29,12 @@ services:
     restart: always
     ports:
       - '5432:5432'
+    env_file:
+      - .env  # Load environment variables from .env file
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=7975
-      - POSTGRES_DB=academic_management
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     volumes:
       - data_postgres:/var/lib/postgresql/data
     networks:
