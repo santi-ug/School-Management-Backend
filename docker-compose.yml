@@ -8,33 +8,23 @@ services:
       - '3000:3000'
     volumes:
       - .:/app
-      - /app/node_modules  # Exclude node_modules to prevent overriding dependencies
+      - /app/node_modules
     depends_on:
       - postgres
     env_file: 
-      - .env  # Load environment variables from .env file
-    environment:
-      - POSTGRES_HOST=${DB_HOST}
-      - POSTGRES_PORT=${DB_PORT}
-      - POSTGRES_USER=${DB_USERNAME}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      - .env  # Explicitly load .env file
     networks:
       - network-school-management
-    command: npm run start:dev  # Ensures NestJS runs properly
+    command: npm run start:dev
 
   postgres:
     container_name: postgres-school-management
     image: postgres:latest
     restart: always
     ports:
-      - '5432:5432'
+      - '54320:5432'
     env_file:
-      - .env  # Load environment variables from .env file
-    environment:
-      - POSTGRES_USER=${DB_USERNAME}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      - .env  # Explicitly load .env file
     volumes:
       - data_postgres:/var/lib/postgresql/data
     networks:
